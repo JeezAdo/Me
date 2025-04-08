@@ -1,0 +1,433 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffca7527;
+    color: #111;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+.open{
+    margin-left: 5%;
+}
+  
+  .btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #000000, #434343);
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: auto;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff30, #ffffff10);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .btn:hover::before {
+    left: 100%;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: linear-gradient(135deg, #434343, #000000);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Centering container */
+  .center-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Optional: for vertical centering on full screen */
+    gap: 20px;
+  }
+
+  .header-pic{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 12px;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-top: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .category-selector {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    padding: 2rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    width: 150px;
+  }
+  
+  .category:hover {
+    background-color: #000;
+    color: #fff;
+    transform:  scale(1.03);
+  }
+  
+
+/* Container for all projects */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* Spacing between the projects */
+    justify-content: space-between; /* Ensure items are spread across */
+    padding: 2rem;
+  }
+  
+  /* Style for each project */
+  /* Pointer cursor to indicate interactivity */
+.project {
+    width: calc(50% - 1rem); /* 2 items per row */
+    margin-bottom: 2rem;
+    background-color: rgba(255, 202, 138, 0.228);
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Scale effect on hover to make it feel interactive */
+  .project:hover {
+    transform: scale(1.05); /* Slightly scale the project block */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  
+  
+  /* Hover effect on the arrow (making it more visible) */
+  
+  
+  /* Active state when clicked (reveal description and dim background) */
+  .project.active {
+    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+    color: #fff;
+    z-index: 10; /* Make sure the active project is above others */
+  }
+  
+  /* Description text */
+  .project .description {
+    max-height: 6rem; /* Limit the height to show a truncated version */
+    overflow: hidden;
+    position: relative;
+    line-height: 1.5;
+    transition: max-height 0.3s ease;
+  }
+  
+  .project.active .description {
+    max-height: none; /* Expand to show full description */
+  }
+  
+  /* For images */
+  .project img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .click-to-expand {
+    position: absolute;
+    top: 10px; /* Position it at the top */
+    right: 10px; /* Align it to the right */
+    font-size: 0.8rem;
+    color: #ff6347;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+  }
+
+  /* Overlay to dim the background */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Lightly dim the background */
+    z-index: 5;
+  }
+  
+  .overlay.show {
+    display: block; /* Show when project is active */
+  }
+  
+  
+  .read-more-btn:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+  }
+  .contact-section {
+    
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .contact-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-message {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border: 2px solid #000;
+    border-radius: 16px;
+    background: #fff;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  }
+  
+  .contact-card img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .project {
+      width: 100%; /* 1 item per row */
+    }
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust min size for bigger images */
+    gap: 1rem;
+    width: 80%; /* Container width */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  /* Gallery Image Styles */
+  .gallery-grid img {
+    width: 100%;
+    height: 250px; /* Increase height for bigger images */
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.03);
+  }
+
+  .preview-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .preview-overlay img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+  
+    /* About section container */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  
+  .about-container .text {
+    width: 60%;
+    padding-left: 2rem;
+  }
+  
+  .about-container .images {
+    width: 30%;
+  }
+  
+  .about-container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    
+  }
+  
+  /* Carousel styling for mobile */
+  .carousel {
+    display: none; /* Hidden by default */
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+      }
+
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-container .text {
+      width: 80%;
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    .about-container .images {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  
+    /* Show carousel only in mobile view */
+    .carousel {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    /* Hide image blocks in mobile */
+    .about-container img {
+      display: none;
+    }
+    .carousel::-webkit-scrollbar {
+        display: none; /* Hide the scrollbar */
+      }
+      .project {
+        width: 100%; /* 1 item per row */
+      }
+    
+      .contact-container h1 {
+        font-size: 2rem;
+      }
+    
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .contact-card {
+        width: 100%;
+        max-width: 300px;
+      }
+  }
+
+  

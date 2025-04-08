@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adrian | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+
+  <section class="hero">
+    <img class="header-pic" src="./pictures/profilegood.JPG">
+    <h1>Adrián Ivančák</h1>
+    <h2>Photographer & Creative Explorer</h2>
+    <p>Street. Travel. Cars. Passion in every frame.</p>
+  </section>
+  <div class="center-btn">
+    <button class="btn" onclick="window.location.href='about-me.html'">About Me</button>
+    <button class="btn" onclick="window.location.href='contact.html'">Contact</button>
+  </div>
+  <section class="section">
+    <h2 style="text-align:center">Explore My Photography</h2>
+    <div class="category-selector">
+      <div class="category" onclick="window.location.href='gallery-street.html'">Street / Travel</div>
+      <div class="category" onclick="window.location.href='gallery-cars.html'">Cars</div>
+    </div>
+  </section>
+
+  <section class="section">
+
+    <div class="projects-container">
+
+  
+      <div class="project">
+        <h3>Short Documentary "Belonging Beyond Borders"</h3>
+        <p><strong>Role:</strong> Camera, Lights</p>
+        <p class="description">Collaborated with a team of 5 to develop a short documentary about the “Women for Women” program, featuring a single protagonist. I operated a 3-camera setup during filming, handled color grading, and attended events to capture relatable shots that supported our narrative.
+        </p>
+        <iframe src="https://www.youtube.com/embed/mF_C-tTwHXU" title="YouTube Video" allowfullscreen></iframe>
+      </div>
+
+      <div class="project">
+        <h3>Fire Brigade Ad Concept "Silent Guardians"</h3>
+        <p><strong>Role:</strong> Director, Camera</p>
+        <p class="description">Developed the concept “Silent Guardians” for Breda Brandweer’s ad campaign, creating 3 short reel videos. I directed the project, overseeing the creative direction and camera work to bring the concept to life.</p>
+        <iframe src="https://www.youtube.com/embed/VZSEqYiHsUg" title="YouTube Video" allowfullscreen></iframe>
+      </div>
+
+      <div class="project">
+        <h3>Short Commercial</h3>
+        <p><strong>Role:</strong> Camera, Director</p>
+        <p class="description">Collaborated with a team of 3 to develop a 60-second commercial from scratch. I took the lead in conceptualizing the idea, sourcing actors, and selecting the location. Additionally, I handled the camera work to bring the vision to life.</p>
+        <iframe src="https://www.youtube.com/embed/qczDj91WDjI" title="YouTube Video" allowfullscreen></iframe>
+      </div>
+
+      <div class="project">
+        <h3>Short Movie "Johan van der Bond"</h3>
+        <p><strong>Role:</strong> Camera, Director, Partly Editor</p>
+        <p class="description">Worked with a team of 6 to create a 5-minute short film. The story was based on my original idea, and our group developed the script together. I was responsible for casting all the actors, directing a large portion of the film, and filming several challenging scenes. Additionally, I contributed to the editing process, helping shape the final cut.</p>
+        <span class="click-to-expand">Click to Expand</span>
+        <iframe src="https://www.youtube.com/embed/LPmOgUa3a-o" title="YouTube Video" allowfullscreen></iframe>
+      </div> 
+
+      <div class="project">
+        <h3>Creation of Magazine "Vintigue"</h3>
+        <p><strong>Role:</strong> Illustrator, Story Writer</p>
+        <p class="description">Worked as part of a 6-person team to create a magazine, where we developed our own theme, content, stories, and graphics. My contributions included creating a feature article, which involved conducting an interview, personally photographing the subject, and rewriting the story to present it in a more professional style.</p>
+        <span class="click-to-expand">Click to Expand</span>
+        <img src="./pictures/Projects/magazine.jpg" alt="Project 1" class="project-image" />
+      </div>
+
+      <!-- <div class="project">
+        <h3>TV Show Concept Development "Mole in the Middle"</h3>
+        <p><strong>Role:</strong> Camera, Graphics</p>
+        <p class="description">Operated a 3-camera setup and lights for the TV show concept Mole in The Middle (Game Show). Assisted with preproduction tasks and created graphics and transitions to enhance the show’s visual appeal.</p>
+        <img src="./pictures/travel2.jpg" alt="Project 1" class="project-image" />
+      </div> -->
+
+  
+      
+    </div>
+
+  </section>
+
+  
+ 
+  <footer class="footer">
+    <p>© <span id="year"></span> Adrian | All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
+</body>
+
+ <!-- <span class="click-to-expand">Click to Expand</span> -->
+ <!-- <img src="./pictures/travel2.jpg" alt="Project 1" class="project-image" /> -->
+ <!--  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube Video" allowfullscreen></iframe>-->
+
+</html>

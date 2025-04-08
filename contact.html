@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1 class="open">Contact</h1>
+        <button class="btn" onclick="goBack()">Back</button>
+      </header>
+
+      <div class="hero">
+        <img style="width: 150px; height: 150px; margin-top: 40px;"  class="header-pic" src="./pictures/profilegood.JPG">
+      </div>
+      
+  <section class="contact-section">
+    <div class="contact-container">
+      <h1>Let’s Connect</h1>
+      <p class="contact-message">
+        Feel free to reach out if you have a project, want to collaborate, or just want to chat about cars and photography.
+      </p>
+
+      <div class="contact-info">
+        <a href="https://www.instagram.com/adrian.ivancak" target="_blank" class="contact-card instagram">
+          <img src="./pictures/instagram.png" alt="Instagram" />
+          <span>@adrian.ivancak</span>
+        </a>
+
+        <a href="mailto:youremail@example.com" class="contact-card email">
+          <img src="./pictures/mail.png" alt="Email" />
+          <span>ivancakadrian@gmail.com</span>
+        </a>
+
+        <div class="contact-card phone">
+          <img src="./pictures/mobile.png" alt="Phone" />
+          <span>+31 6 396 773 99</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+</body>
+</html>
