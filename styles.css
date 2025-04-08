@@ -111,7 +111,8 @@ body {
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
-    width: 150px;
+    max-width: 150px;
+    width: 100%;
   }
   
   .category:hover {
@@ -246,6 +247,8 @@ body {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    width: 100%;
+
   }
   
   .contact-card {
