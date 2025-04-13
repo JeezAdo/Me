@@ -464,8 +464,9 @@ body {
   .resume-content {
     position: relative;
     margin: auto;
-    width: 90%;
-    height: 90%;
+    margin-top: 10%;
+    width: 75%;
+    height: 75%;
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
