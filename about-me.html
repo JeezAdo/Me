@@ -6,8 +6,8 @@
   <title>About Me</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
+<body class="has-fixed-header">
+  <header class="fixed-header">
     <h1 class="open">About Me</h1>
     <button class="btn back" onclick="goBack()">Back</button>
   </header>
@@ -43,9 +43,17 @@
       </p>
       <p>This website you’re browsing right now? Also fully coded by me.
       </p>
-      <p>
-        Feel free to check out my <a href="">Resume</a> for more details.
-      </p>
+      
+      <a href="#" onclick="openResume(); return false;">Feel free to check out my Resume</a>
+
+      <div id="resumeOverlay" class="resume-overlay">
+        <div class="resume-content">
+          <span class="resume-close" onclick="closeResume()">&times;</span>
+          <a href="./pictures/CV/CV_AdrianIvancak.pdf" download class="resume-download" target="_blank">Download PDF</a>
+          <iframe src="./pictures/CV/CV_AdrianIvancak.pdf" frameborder="0"></iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -55,6 +63,21 @@
     function goBack() {
       window.history.back();
     }
+
+    function openResume() {
+  document.getElementById('resumeOverlay').style.display = 'block';
+}
+
+function closeResume() {
+  document.getElementById('resumeOverlay').style.display = 'none';
+}
+
+window.onclick = function(event) {
+  const overlay = document.getElementById('resumeOverlay');
+  if (event.target === overlay) {
+    overlay.style.display = 'none';
+  }
+};
   </script>
 </body>
 </html>
